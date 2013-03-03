@@ -1,6 +1,8 @@
-package ndr.model;
+package ndr.player;
 
-public interface Player {
+import ndr.model.TryResult;
+
+public interface IPlayer {
 	String guessNumber();
 	void feedback( String number, TryResult result ); 
 }
