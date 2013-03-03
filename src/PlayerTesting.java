@@ -21,7 +21,11 @@ public class PlayerTesting {
 	}
 
 	public void printStats() {
-		System.out.println("Iterations :" + iterations);
+		System.out.println("Iterations : " + iterations);
+	}
+	
+	public int getLength(){
+		return iterations;
 	}
 
 	public static void main(String[] args) {

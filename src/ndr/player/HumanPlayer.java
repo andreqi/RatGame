@@ -18,7 +18,7 @@ public class HumanPlayer implements IPlayer {
 
 	@Override
 	public void feedback(String number, TryResult result) {
-		// Do nothing
+		System.out.println(result);
 	}
 
 }
