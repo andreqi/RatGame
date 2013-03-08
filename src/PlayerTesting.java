@@ -2,6 +2,7 @@ import ndr.model.RatGame;
 import ndr.model.TryResult;
 import ndr.player.HumanPlayer;
 import ndr.player.IPlayer;
+import ndr.player.RandomPlayer;
 
 public class PlayerTesting {
 
@@ -29,9 +30,15 @@ public class PlayerTesting {
 	}
 
 	public static void main(String[] args) {
-		IPlayer player = new HumanPlayer();
-		PlayerTesting test = new PlayerTesting();
-		test.play(new RatGame("1234"), player);
+		IPlayer player = new RandomPlayer();
+		PlayerTesting test = new PlayerTesting();	
+		int iter = 100000;
+		double ans = 0;
+		for ( int i = 0 ; i < iter ; i++ ){
+			test.play(new RatGame(player.guessNumber()), new RandomPlayer());
+			ans += test.getLength();
+		}
+		System.out.println(ans/iter);
 		test.printStats();
 	}
 }
